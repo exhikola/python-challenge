@@ -1,1 +1,18 @@
+The code imports the csv module to work with CSV files.
+
+Initializes variables to store the data and statistics, including total_votes to count the total number of votes, candidates as a dictionary to count votes for each candidate, winner to store the name of the winning candidate, and winner_votes to store the number of votes received by the winning candidate.
+
+It opens the 'election_data.csv' file for reading.
+
+It skips the header row using next(csvreader) since the header usually contains column names and not the actual data.
+
+It iterates through the rows of the CSV file, counting the total number of votes and updating the vote count for each candidate in the candidates dictionary.
+
+After reading all the data, it prints the election results, including the total number of votes, the results for each candidate (name, percentage of votes, and total votes), and the winner of the election.
+
+It calculates the percentage of votes for each candidate by dividing their vote count by the total number of votes and then multiplying by 100.
+
+It determines the winner by comparing the vote count of each candidate with the current winner_votes. If a candidate has more votes than the previous winner, it updates the winner and winner_votes variables.
+
+Finally, it prints the winner of the election.
 
