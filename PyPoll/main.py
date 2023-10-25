@@ -1,16 +1,16 @@
 import csv
 
-# Initialize variables to store the data and statistics
+# Initialization of variables to store the data and statistics
 total_votes = 0
 candidates = {}
 winner = ""
 winner_votes = 0
 
-# Read the CSV file
+# Step to read the CSV file
 with open('election_data.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     
-    # Skip the header row
+    # Skipping the header row that has no data
     header = next(csvreader)
     
     for row in csvreader:
