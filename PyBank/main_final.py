@@ -1,4 +1,10 @@
 import csv
+import os
+
+# Get the absolute path to the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# Construct the absolute path to the CSV file
+csv_file_path = os.path.join(script_dir, 'budget_data.csv')
 
 # Initialization of variables to store the data we need to get
 total_months = 0
@@ -7,8 +13,8 @@ profit_changes = []
 greatest_increase = ["", 0]
 greatest_decrease = ["", 0]
 
-# The function above helps to open the file and read it
-with open('budget_data.csv', 'r') as csvfile:
+# Open the file using the absolute path
+with open(csv_file_path, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
     
     # This function helps to skip the first row that is the header
@@ -60,4 +66,3 @@ with open(output_file, 'w') as file:
     file.write(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n")
 
 print(f"Results exported to {output_file}")
-
